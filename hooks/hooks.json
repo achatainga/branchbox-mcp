@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/mcp-hooks.json",
+  "version": "1.0.0",
+  "name": "branchbox-hooks",
+  "hooks": {
+    "WorktreeCreate": [
+      {
+        "handler": "branchbox_fork_ephemeral"
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "tool == 'run_command'",
+        "condition": "command.match(/(--force-reset|migrate:fresh|db:wipe|--accept-data-loss|terraform\\s+destroy)/i)",
+        "action": "block",
+        "exitCode": 2,
+        "message": "🛑 [BRANCHBOX FIREWALL]: Destructive migration/reset flag detected. Operation blocked to prevent data loss."
+      }
+    ],
+    "WorktreeRemove": [
+      {
+        "handler": "branchbox_promote_and_reap"
+      }
+    ]
+  }
+}
