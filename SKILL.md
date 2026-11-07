@@ -1,5 +1,5 @@
 ---
-name: branchbox-mcp
+name: branchbox
 version: 1.0.0
 description: "Ephemeral CoW local database branching, dynamic port isolation & destructive-DDL firewall. Prevents AI coding agents from dropping production/staging databases or colliding on shared dev ports."
 author: "Alejandro Chataing <a.chataing.a@gmail.com>"
