@@ -1,6 +1,6 @@
 {
   "name": "@achatainga/branchbox-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Ephemeral Copy-on-Write Database Branching & Destructive Migration Firewall for AI Coding Agents",
   "type": "module",
   "main": "src/engine.mjs",
